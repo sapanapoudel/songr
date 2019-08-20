@@ -11,4 +11,10 @@ public class HomeControllerTest {
                 HomeController.reverseWord("Hello World") );
     }
 
+    @Test
+    public void helloWorldRouteTest_differentWords() {
+        assertEquals("Should be same", "Sapana is name My",
+                HomeController.reverseWord("My name is Sapana") );
+    }
+
 }

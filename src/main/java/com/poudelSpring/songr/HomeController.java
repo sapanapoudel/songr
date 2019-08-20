@@ -3,6 +3,7 @@ package com.poudelSpring.songr;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.regex.Pattern;
@@ -16,9 +17,8 @@ public class HomeController {
 
 
     //route that turns words into UPPER CASE
-    @GetMapping("/capitalize/hello")
-    public String capitalizeRoute(@RequestParam(name="name",
-            required=false, defaultValue="World") String name, Model model) {
+    @GetMapping("/capitalize/hello/{name}")
+    public String capitalizeRoute(@PathVariable String name, Model model) {
         model.addAttribute("name", name.toUpperCase());
 
         return "capitalizeword";

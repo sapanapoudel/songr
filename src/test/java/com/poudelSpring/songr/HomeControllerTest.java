@@ -1,5 +1,6 @@
 package com.poudelSpring.songr;
 
+import com.poudelSpring.songr.controllers.HomeController;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

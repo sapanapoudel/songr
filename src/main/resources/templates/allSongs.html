@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All the songs</title>
+</head>
+<body>
+<h1> All the Albums</h1>
+
+<div th:each="album : ${albums}">
+<h3 th:text="${album.title}">Album Title</h3>
+<p>
+    By: <span th:text="${album.artist}"></span>
+    Number of singles: <span th:text="${album.songCount}"></span>
+</p>
+    <a th:href="@{album.imageUrl}">Click here</a>
+<!--    <a th:link="${album.imageUrl}">Click here</a>-->
+</div>
+<div>
+    <form method="POST" action="/albums">
+        Title:<input name="title" />
+        Artist:<input name="artist" />
+        Singles:<input name="songCount" />
+        Length:<input name="length" />
+        Image:<input name="imageUrl" />
+        <input type="submit" />
+
+
+    </form>
+</div>
+
+</body>
+</html>

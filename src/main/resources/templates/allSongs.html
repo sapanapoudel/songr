@@ -10,11 +10,19 @@
 <div th:each="album : ${albums}">
 <h3 th:text="${album.title}">Album Title</h3>
 <p>
-    By: <span th:text="${album.artist}"></span>
-    Number of singles: <span th:text="${album.songCount}"></span>
+    Artist: <span th:text="${album.artist}"></span>
+
 </p>
-    <a th:href="@{album.imageUrl}">Click here</a>
-<!--    <a th:link="${album.imageUrl}">Click here</a>-->
+    <p>
+        Number of singles: <span th:text="${album.songCount}"></span>
+    </p>
+    <p>
+        Length:<span th:text="${album.length}"></span>
+    </p>
+    <a th:href="${album.imageUrl}">Click here</a>
+
+</div>
+</div>
 </div>
 <div>
     <form method="POST" action="/albums">
@@ -24,6 +32,7 @@
         Length:<input name="length" />
         Image:<input name="imageUrl" />
         <input type="submit" />
+
 
 
     </form>

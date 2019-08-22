@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album</title>
+</head>
+<body>
+<h1 th:text=${album}></h1>
+
+<div th:each="song : ${album.songs}">
+    <h3 th:text="${song.title}"> </h3>
+
+</div>
+
+<h2>Add a new song by this Album!</h2>
+<!-- create the route that listens for this post and creates a new movie with the director whose id is in the path -->
+<form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
+    Title:<input name="title" />
+    Artist:<input name="artist" />
+    Singles:<input name="songCount" />
+    Length:<input name="length" />
+    Image:<input name="imageUrl" />
+    <input type="submit" />
+</form>
+
+
+</body>
+</html>

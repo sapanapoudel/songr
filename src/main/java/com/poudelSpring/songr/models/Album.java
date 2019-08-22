@@ -1,10 +1,7 @@
 package com.poudelSpring.songr.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -17,6 +14,9 @@ public class Album {
     int songCount;
     long length;
     String imageUrl;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "album")
+    List<Song> songs;
 
     public Album() {}
 
@@ -46,5 +46,15 @@ public class Album {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public String toString(){
+        return String.format("%s %s %d %d %s",
+                this.title, this.artist, this.songCount, this.length, this.imageUrl);
     }
 }

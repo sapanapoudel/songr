@@ -8,7 +8,7 @@ import java.util.List;
 public class Album {
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    public long id;
     String title;
     String artist;
     int songCount;
@@ -20,12 +20,16 @@ public class Album {
 
     public Album() {}
 
+
     public Album(String title, String artist, int songCount, long length, String imageUrl) {
         this.title = title;
         this.artist = artist;
-        this.songCount =songCount;
+        this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+    public Album(String album) {
+        this.title = album;
     }
 
     public String getTitle() {

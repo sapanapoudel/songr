@@ -38,10 +38,11 @@ public class AlbumController {
         return new RedirectView("/albums");
     }
 
-    @GetMapping("/album/{id}")
+    @GetMapping("/albums/{id}")
     public String getOneAlbum(@PathVariable long id, Model m) {
-        Song s = songRepository.findById(id).get();
-        m.addAttribute("song", s);
+        Album a  = albumRepository.findById(id).get();
+        System.out.println(a.getSongs().size());
+        m.addAttribute("album", a);
         return "oneAlbum";
     }
 }

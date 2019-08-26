@@ -9,9 +9,18 @@
 <div th:each="song : ${songs}" class="song">
     <h3 th:id="${song.title}" th:text="${song.title}">Song Title</h3>
     <p>
-        <a th:href="${ '/albums/' + song.album.id}">Song by <span th:text="${song.artist}"></span></a>
+
+       <a th:href="${'/albums/' + song.album.id}"> Album<span th:test="${song.album.title}"></span></a>
     </p>
 </div>
+<Form METHOD="POST" action="/songs">
+    Title<input type="text" name="title" /><br>
+    Album:<input name="album" /><br>
+    Length<input type="text" name="length"/> <br>
+    Track Number<input type="text" name="trackNumber"/><br>
+    <input type="submit"/>
+
+</Form>
 
 </body>
 </html>

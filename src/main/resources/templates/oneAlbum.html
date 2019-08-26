@@ -12,10 +12,11 @@
 
 </div>
 
-<h2>Add a new song by this Album!</h2>
+<h2>Add a new song to this Album!</h2>
 <!-- create the route that listens for this post and creates a new movie with the director whose id is in the path -->
 <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
     Title:<input name="title" />
+    Album:<input name="album" />
     Artist:<input name="artist" />
     Singles:<input name="songCount" />
     Length:<input name="length" />

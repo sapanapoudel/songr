@@ -17,11 +17,12 @@ public class Song {
 
     public Song() {}
 
-    public Song(String title, long length, int trackNumber) {
+    public Song(String title,Album album, long length, int trackNumber) {
 
         this.title  = title;
         this.length = length;
         this.trackNumber = trackNumber;
+        this.album = album;
     }
 
     public String getTitle() {

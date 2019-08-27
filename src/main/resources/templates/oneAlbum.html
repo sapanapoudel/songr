@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1 th:text=${album.title}></h1>
+<h3>All the Songs from this Album</h3>
 
 <div th:each="song : ${album.songs}">
     <h3 th:text="${song.title}"> </h3>
